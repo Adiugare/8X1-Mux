@@ -1,0 +1,53 @@
+8x1 Multiplexer – Verilog Implementation
+-This project demonstrates the design and simulation of an 8-to-1 Multiplexer using Verilog HDL. A multiplexer is a combinational logic circuit that selects one of several input signals and forwards it to a single output line, based on select inputs.
+
+Files:-
+-mux_8x1.v – Verilog module for the 8x1 multiplexer
+-mux_8x1_tb.v – Testbench module for simulation and verification
+
+Module Description:-
+Inputs
+-in[7:0] – 8-bit input lines
+-sel[2:0] – 3-bit select line
+
+Output:-
+-out – Output corresponding to the selected input line
+
+Functionality:-
+-The value of sel determines which of the 8 input lines (in[0] to in[7]) is passed to the output out.
+
+Logical Operation:-
+
+| Select (`sel`) | Output (`out`) = `in[sel]` |
+| -------------- | -------------------------- |
+| 3'b000         | in\[0]                     |
+| 3'b001         | in\[1]                     |
+| 3'b010         | in\[2]                     |
+| 3'b011         | in\[3]                     |
+| 3'b100         | in\[4]                     |
+| 3'b101         | in\[5]                     |
+| 3'b110         | in\[6]                     |
+| 3'b111         | in\[7]                     |
+
+Testbench Highlights:-
+The testbench mux_8x1_tb.v applies:
+-Different 8-bit inputs
+-All possible 3-bit select combinations
+
+Simulation Expectations:-
+For in = 8'b10101010:
+
+| `sel` | `out` |
+| ----- | ----- |
+| 000   | 0     |
+| 001   | 1     |
+| 010   | 0     |
+| 011   | 1     |
+| 100   | 0     |
+| 101   | 1     |
+| 110   | 0     |
+| 111   | 1     |
+
+Tools Used:-
+-Verilog HDL
+-Xilinx Vivado 
